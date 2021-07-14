@@ -30,6 +30,9 @@
 
 
         </form>
+
+
+
         <?php
 
                 if(isset($_POST["boton_filtrar"]))
@@ -90,7 +93,8 @@
                 </table>
                 <?php
 
-    }else{
+    }
+            else{
         ?>
         <caption>Lista de productos</caption>
         <table class="container text-center table table-bordered">

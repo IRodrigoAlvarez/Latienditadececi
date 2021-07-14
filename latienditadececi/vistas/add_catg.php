@@ -12,8 +12,6 @@
         
 
         echo" <script>
-        
-        
             window.alert('Se agrego correctamente');
         
         </script>";

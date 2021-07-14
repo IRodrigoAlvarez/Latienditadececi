@@ -158,7 +158,7 @@
                                             <div class="row">
                                                 <div class="col">
                                                 
-                                                <center><p class="tredes" >Muebles</p><br><img src="img/SiS-deco.png" class="imgRedonda">
+                                                <center><p class="tredes" >Muebles</p><br><a href=""><img src="img/SiS-deco.png" class="imgRedonda"></a>
                                                 </div>
                                                 <div class="col">
                                                

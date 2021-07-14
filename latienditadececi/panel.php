@@ -36,13 +36,16 @@
                 <h5>Productos</h5>
             </div>
             <li class="nav-item">
-                <a href="panel.php?pagina=getprod"  class="nav-link"><span>Mostrar Producto</span> </a>
-            </li>
-            <li class="nav-item">
-                <a href="panel.php?pagina=add_stock" class="nav-link"><span>Agregar Stock</span> </a>
+                <a href="panel.php?pagina=getprod"  class="nav-link"><span>Mostrar Productos</span> </a>
             </li>
             <li class="nav-item">
                 <a href="panel.php?pagina=reg_prod" class="nav-link"><span>Registrar Producto</span> </a>
+            </li>
+            <li class="nav-item">
+                <a href="panel.php?pagina=add_catg" class="nav-link"><span>Agregar Categoria</span> </a>
+            </li>
+            <li class="nav-item">
+                <a href="panel.php?pagina=add_stock" class="nav-link"><span>Agregar Stock</span> </a>
             </li>
             <li class="nav-item">
                 <a href="panel.php?pagina=mod_prod" class="nav-link"><span>Modificar producto</span> </a>
@@ -50,20 +53,18 @@
             <li class="nav-item">
                 <a href="panel.php?pagina=eliminarprod" class="nav-link"><span>Eliminar producto</span> </a>
             </li>
-            <li class="nav-item">
-                <a href="panel.php?pagina=add_catg" class="nav-link"><span>Agregar Categoria</span> </a>
-            </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
             <div class="sidebar-heading">
                 <h5>Ventas</h5>
             </div>
             <li class="nav-item">
-                <a href="panel.php?pagina=cursos"  class="nav-link"><span>Registrar Venta</span> </a>
+                <a href="panel.php?pagina=informes"  class="nav-link"><span>Registo de Ventas</span> </a>
             </li>
             <li class="nav-item">
-                <a href="panel.php?pagina=acursos"  class="nav-link"><span>Buscar Venta</span> </a>
+                <a href="panel.php?pagina=registrarventa"  class="nav-link"><span>Realizar Venta</span> </a>
             </li>
+            
             <hr class="sidebar-divider">
             <li class="nav-item">
                 <a href="index.php"  class="nav-link"><span>Cerrar Sesion</span> </a>
@@ -83,7 +84,7 @@
             || $_GET['pagina'] == "eliminarprod" || $_GET['pagina'] == "add_catg"
 
 
-            || $_GET['pagina'] == "telefono" || $_GET['pagina'] == "correo"
+            || $_GET['pagina'] == "registrarventa" || $_GET['pagina'] == "informes"
             || $_GET['pagina'] == "apmaterno" || $_GET['pagina'] == "appaterno"
             || $_GET['pagina'] == "nombre"){
             include "vistas/".$_GET['pagina'].".php";
