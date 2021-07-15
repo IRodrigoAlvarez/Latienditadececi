@@ -1,32 +1,44 @@
 
             @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Sansita+Swashed&display=swap');
             @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
-            @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swa');
+            @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Permanent+Marker&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Permanent+Marker&family=Waiting+for+the+Sunrise&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Delius&family=Permanent+Marker&family=Waiting+for+the+Sunrise&display=swap');
+            
+
             body{
                 background:#e7ebda;
                 zoom: 75%;
             }
             
-        
             p {
                 font-family: 'Indie Flower', cursive;
                 font-size: 30px;
             }
 
             p.titulo{
-                font-size: 100px;
+                font-size: 130px;
                 font-family: 'Dancing Script', cursive;
             }
 
             p.inicio{
-                font-size: 30px;
-                font-family: 'Sansita Swashed', cursive;
+                font-size: 40px;
+                font-family: 'Delius', cursive;
+            }
+
+            p.categorias{
+                font-size: 70px;
+                /*font-family: 'Sansita Swashed', cursive;
+                font-family: 'Permanent Marker', cursive;*/
+                font-family: 'Amatic SC', cursive;
             }
 
 
             p.redes{
-                font-size: 20px;
-                font-family: 'Sansita Swashed', cursive;
+                font-size: 70px;
+                font-family: 'Amatic SC', cursive;
             }
 
             p.tredes{
@@ -62,6 +74,7 @@
                 border-radius: 6px;
                         
             }
+            
             #redes:hover{
                 color: 	#24C1D9;
                 background-color: #AFEEEE;
@@ -78,8 +91,8 @@
 
             }
             button.a{
-                font-family: 'Dancing Script', cursive;
-                font-size: 30px;
+                font-family: 'Amatic SC', cursive;
+                font-size: 60px;
                 background: transparent;
                 border: none !important;
                 height: 100px;
@@ -144,10 +157,22 @@
                 position: relative;
             }
             .imgRedonda {
-                width:200px;
-                height:200px;
-                border-radius:100px;
+                width:300px;
+                height:300px;
+                border-radius:200px;
             }
+
+            .imgRedond{
+                position: relative;
+                top: -30px; left: 0px;
+                width:400px;
+                height:400px;
+                border-radius:200px;
+            }
+
+            
+                
+            
 
 
 
