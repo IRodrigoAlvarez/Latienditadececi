@@ -2,7 +2,32 @@
 
     include "conexion.php";
 
+    if(isset($_POST['boton_nc']))
+    {
+        $nombre=$_POST['nuevo_cliente'];
+        $aux="";
+        $sql="SELECT * FROM cliente WHERE nombre_cliente='$nombre'";
+        $result=mysqli_query($conexion,$sql);
+        while($mostrar=mysqli_fetch_array($result))
+        {
+            $aux=$mostrar['nombre_cliente'];
+        }
 
+        if($nombre != $aux){
+            $sql="INSERT INTO cliente(nombre_cliente) VALUE ('$nombre')";
+            $conexion->query($sql);
+        }else{
+
+
+            echo "<script>
+            
+                window.alert('El usuario ya existe, por favor eliga otro nombre');
+                window.location='panel.php?pagina=registrarventa';
+            
+            </script>";
+        }
+
+    }
 
 
     if(isset($_POST['boton_add']))
@@ -29,14 +54,10 @@
         date_default_timezone_set("America/Santiago");
         $fecha = date("Y-m-d");
         $nombrec=$_POST['nombre_cliente'];
+        
         $detalle=$_POST['detallev'];
         
-
-
-        $sqlcliente="INSERT INTO cliente(nombre_cliente) VALUE('$nombrec')";
-        $conexion->query($sqlcliente);
-
-        $idventa=1;
+            $idventa=1;
             $s="SELECT * from venta where id_rventa = (select MAX(id_rventa) from venta)";
             $result2=mysqli_query($conexion,$s);
             while($mostrar2=mysqli_fetch_array($result2))
@@ -60,7 +81,7 @@
             echo $conexion->error;
 
             $idcliente;
-            $sqlID="SELECT * FROM cliente WHERE nombre_cliente='$nombrec' ";
+            $sqlID="SELECT * FROM cliente WHERE id_cliente='$nombrec' ";
             $result3=mysqli_query($conexion,$sqlID);
             while($mostrar3=mysqli_fetch_array($result3))
             {
@@ -73,7 +94,7 @@
 
             $conexion->query($sqlventa);
         }
-        echo "ID VENTA:".$idventa;
+        
         $sql="INSERT INTO registroventa(id_venta,total_venta,fecha) VALUE('$idventa','$total','$fecha')";
         $conexion->query($sql);
         echo $conexion->error;
@@ -153,7 +174,7 @@
                             <th>ID Producto</th>
                             <th>Nombre Producto</th>
                             <th>Cantidad</th>
-                            <th>Precio</th>
+                            <th>Precio $</th>
                             <th>Cantidad </th>
                             <th>Borrar Producto </th>
                             
@@ -206,16 +227,44 @@
                 echo "<b>PRECIO TOTAL: $".$precio.'</b>';
                 
                 ?>
+
+            
                 <form action="panel.php?pagina=registrarventa" method="POST">
-                                <br>
-                    <label>Ingresar Nombre cliente </label><br>
-                    <input type="text" name="nombre_cliente" placeholder="Nombre cliente...">
-                    <br><br>
+                    <br>
+                    <label>Seleccionar nombre de cliente registrado </label><br>
+                    
+                    <select name="nombre_cliente" >
+                        <?php
+                            $sql="SELECT * FROM cliente";
+                            $result=mysqli_query($conexion,$sql);
+                            while($mostrar=mysqli_fetch_array($result))
+                            {
+                                echo '<option value=" '.$mostrar['id_cliente'].'">'.$mostrar['nombre_cliente'].'</option>';
+                            }
+                        ?>
+                    </select>
+                    <br>
+
+                    <br>
+                <label>Si desea ingresar el NOMBRE de un NUEVO cliente, puede hacerlo aquí.</label><br>
+                <label>Debe ingresar el nombre del cliente con el siguiente formato:</label><br>
+                <label>Nombre, Apellido Paterno, Apellido Materno</label><br>
+                <form action="panel.php?pagina=registrarventa" method="POST">
+                    <input type="text" name="nuevo_cliente" placeholder="Nuevo cliente...">
+                    <input type="submit" name="boton_nc" value="Agregar">
+                </form>
+                        
+                    <br>
+                    <br>
+                    <label>Si desea escribir algún detalle en particular sobre la venta, puede hacerlo aquí </label><br>
                     <textarea placeholder="Detalle venta" name='detallev' rows="5" cols="50" style="resize: none;"></textarea><br>
                     <input type="submit" name="boton_venta" value="Vender">
-                    <input type="submit" name="Limpiar" value="Limpiar Carrito">
+                    <input type="submit" id="form1" name="Limpiar" value="Limpiar Carrito">
 
                 </form>
+                
+                <br> 
+                
     </div>
-        
-              
+   
+    

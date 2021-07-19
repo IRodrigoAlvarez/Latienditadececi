@@ -6,7 +6,8 @@
     if(isset($_POST["boton_addc"]))
     {
         $nombre=$_POST["nombrecate"];
-        $sql="INSERT INTO categoria(nombre_categoria) VALUES ('$nombre')";
+        $imagen=$_POST["archivo"];
+        $sql="INSERT INTO categoria(nombre_categoria,imagen_categoria) VALUES ('$nombre')";
         $conexion->query($sql);
         echo $conexion->error;
         
@@ -28,7 +29,9 @@
         <form action="panel.php?pagina=add_catg" method="POST">
         
             <label>Nombre Categoria:</label>
-            <input type="text" name="nombrecate" placeholder="Ingrese nombre">
+            <input type="text" name="nombrecate" placeholder="Ingrese nombre"><br>
+            <label>Imagen Categoria:</label>
+            <input name="archivo" type="file"/><br><br>
             <input type="submit" name="boton_addc" value="Agregar">
         </form>
     </div>

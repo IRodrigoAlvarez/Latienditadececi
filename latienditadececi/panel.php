@@ -9,7 +9,53 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <style>
 
+            *{
+                margin: 0;
+                padding: 0;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+
+       
+            .wrap{
+                width: 800px;
+                max-width: 90%;
+                margin: 30px auto;
+            }
+
+            ul.tabs{
+                width: 100%;
+                background: #363636;
+                list-style: none;
+                display: flex;
+            }
+
+            ul.tabs li{
+                width: 18%;
+            }
+
+            ul.tabs li a{
+                color: #fff;
+                text-decoration: none;
+                font-size: 16px;
+                text-align: center;
+
+                display: block;
+                padding: 20px 0px;
+            }
+
+            .active{
+                background: #0984CC;
+            }
+
+            ul.tabs li a .tab-text{
+                margin-left: 8px;
+            }
+
+    </style>
 </head>
 
 <body id="page-top">
@@ -35,7 +81,7 @@
             <div class="sidebar-heading">
                 <h5>Productos</h5>
             </div>
-            <li class="nav-item">
+            <li class="nav-item ">
                 <a href="panel.php?pagina=getprod"  class="nav-link"><span>Mostrar Productos</span> </a>
             </li>
             <li class="nav-item">
@@ -54,7 +100,9 @@
                 <a href="panel.php?pagina=eliminarprod" class="nav-link"><span>Eliminar producto</span> </a>
             </li>
             <!-- Divider -->
+
             <hr class="sidebar-divider">
+
             <div class="sidebar-heading">
                 <h5>Ventas</h5>
             </div>
@@ -63,6 +111,27 @@
             </li>
             <li class="nav-item">
                 <a href="panel.php?pagina=registrarventa"  class="nav-link"><span>Realizar Venta</span> </a>
+            </li>
+            
+            <hr class="sidebar-divider">
+
+            <div class="sidebar-heading">
+                <h5>Bandeja</h5>
+            </div>
+            <li class="nav-item">
+                <a href="panel.php?pagina=bandeja"  class="nav-link"><span>Bandeja de Entrada
+                <?php
+                    include "conexion.php";
+                    $sql = "SELECT * FROM bandeja WHERE estado= 'No Visto'";
+                    if ($result=mysqli_query($conexion,$sql)) {
+                        $rowcount=mysqli_num_rows($result);
+                        echo "(".$rowcount.")"; 
+                    }
+                    ?>
+
+
+
+                </span> </a>
             </li>
             
             <hr class="sidebar-divider">
@@ -85,8 +154,7 @@
 
 
             || $_GET['pagina'] == "registrarventa" || $_GET['pagina'] == "informes"
-            || $_GET['pagina'] == "apmaterno" || $_GET['pagina'] == "appaterno"
-            || $_GET['pagina'] == "nombre"){
+            || $_GET['pagina'] == "bandeja" ){
             include "vistas/".$_GET['pagina'].".php";
             }
             else{
@@ -98,4 +166,5 @@
     ?>
 
  </html>
+ 
  

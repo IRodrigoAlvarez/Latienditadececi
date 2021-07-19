@@ -2,14 +2,13 @@
 <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width initial-scale=1.0">
-        <link rel="shortcut icon" href="img/favicon.ico">
         <title> La tiendita de Ceci</title>
+        <link rel="shortcut icon" href="img/favicon2.ico">
         <link rel="stylesheet" href="css/estilos.css">
         <link rel="stylesheet" href="./css/bootstrap.min.css">
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        
         <!--Posibles fondos de pantalla
         1° background-image: url("https://fondosmil.com/fondo/16187.jpg");
         2° background-image: url("https://fondosmil.com/fondo/18743.jpg");
@@ -17,87 +16,41 @@
         4° background-image: url("https://s1.1zoom.me/b4352/104/Texture_Tracery_Light_Blue_543533_1920x1080.jpg");
         5° background-image: url("https://i.pinimg.com/originals/2e/8f/61/2e8f61f0a0bed5c50d0daef5f83ec8ad.jpg");
         
-    
-    
         -->
-        <?php
-            include "conexion.php";
-            if(isset($_POST["boton_enviar"]))
-            {
-                date_default_timezone_set("America/Santiago");
-                $fecha = date("Y-m-d");
-
-
-                $asunto=$_POST["asunto"];
-                $nombre=$_POST["nombre_per"];
-                $celular=$_POST["celular"];
-                $mail=$_POST['correo'];
-
-                $descripcion="<b>--Nombre del cliente :</b> $nombre <br> <b>--Celular :</b> $celular <br> <b>--Mail:</b> $mail <br> <b>--Mensaje:</b> ".$_POST['mensaje']."";
-
-                $sql="INSERT INTO bandeja(asunto,estado,fecha,mensaje) VALUE ('$asunto','No Visto','$fecha','$descripcion')";
-                $conexion->query($sql);
-                echo $conexion->error;
-            }
-
-        ?>
-        
-        
         <style>
-            *{
-            box-sizing: border-box;
+
+            .btn-light-moon {
+                padding: 10px;
+                font-weight: 600;
+                font-size: 20px;
+                color: #FFFFFF;
+                background-color: #24C1D9;
+                border-radius: 6px;
+                border: 2px solid #0016b0;
+            }
+            .btn-light-moon:hover{
+                color: #24C1D9;
+                background-color: #AFEEEE;
+            }
+            
+            .btn-rounded {
+                border-radius: 35px;
             }
 
-            body {
-            margin: 0;
+            hr {
+                border-top: 1px solid #9E9E9E;
             }
 
-            .dropdown-content {
-                display: none;
+            .module {
+                position: relative;
+            }
+            .module::before {
+                background-image: url("https://i.pinimg.com/236x/4c/da/9d/4cda9d51b9effa306a322fb8855ae65f.jpg");
+                content: "";
                 position: absolute;
-                background-color: #f9f9f9;
-                width: 100%;
-                left: 0;
-                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                z-index: 1;
-            }
-
-            .dropdown-content .header {
-                background: blueviolet;
-                padding: 16px;
-                color: white;
-            }
-
-            .dropdown:hover .dropdown-content {
-            display: block;
-            }
-
-            /* Create three equal columns that floats next to each other */
-            .column {
-            float: left;
-            width: 33.33%;
-            padding: 10px;
-            background-color: #ccc;
-            height: 250px;
-            }
-
-            .column a {
-            float: none;
-            color: black;
-            padding: 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-            }
-
-            .column a:hover {
-            background-color: #ddd;
-            }
-            /* Clear floats after the columns */
-            .row:after {
-            content: "";
-            display: table;
-            clear: both;
+                top: 0; left: 0;
+                width: 100%; height: 100%;
+                filter: blur(3px);  
             }
         </style>
 </head>
@@ -131,7 +84,7 @@
                 </div>
             </div>
         </nav>
-        <a href="login.php"  ><img src="img/sesion.png" style="width:50px;
+        <a href="login.php" ><img src="img/sesion.png" style="width:50px;
                 height:50px;
                 border-radius:100px;
                 position: absolute;
@@ -143,97 +96,32 @@
                 <center><p class="inicio">Bienvenid@s tod@s a La tiendita de Ceci</p></center>
                 <center><p class="inicio">Encuentra nuestros productos en
                                     Complejo 5, El tabo. #expoverano puesto 21</p></center>
+                </div>
                 <div id="redes">   
                     <a id="instagram" href="https://www.instagram.com/latiendita_dececi/?hl=es-la" ><img src="img/ig.png"> </a><br><br>
                     <a id="facebook" href="https://www.facebook.com/blancamarialingerie-103484251484852" ><img src="img/face.png"></a>
                 </div>
-        
-
-
-
-
-
-                                    <br><br><br><br><br><br>
-<div class="row">
-  <br><br><br><br><br><br>
-  <p class="inicio">
-    Tienes alguna duda?<br>
-    Te gustaria dejar alguna opinion?<br>
-    Contactanos!!<br>
-  </p>
-  <hr>
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4707.409990223941!2d-71.66713195055844!3d-33.4586447768779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe609984cb8936761!2sComplejo%20Cinco&#39;s!5e0!3m2!1ses!2scl!4v1626656118559!5m2!1ses!2scl" width="750" height="630" style="border:0;" allowfullscreen="" loading="lazy"></iframe>      <div class="container col-md-4 mb-3">
-        <div class="card">
-          <h5 class="card-header info-color text-center py-4 ">
-          Contactanos</h5>
-          <!--Card content-->
-          <div class="card-body px-lg-5 pt-0">
-
-            <form class="text-center" style="color: #757575;" action="contacto.php" method="POST">
-
-              <!-- Name -->
-              <div class="md-form mt-3">
-                  <input type="text" name="nombre_per" id="materialContactFormName" class="form-control">
-                  <label for="materialContactFormName">Nombre</label>
-              </div>
-              <div class="md-form mt-3">
-                  <input type="text"name="asunto" id="materialContactFormName" class="form-control">
-                  <label for="materialContactFormName">Asunto </label>
-              </div>
-              <div class="md-form mt-3">
-                  <input type="text" name="celular"id="materialContactFormName" class="form-control">
-                  <label for="materialContactFormName">Celular </label>
-              </div>
-              <!-- E-mail -->
-              <div class="md-form">
-                  <input type="email" name="correo" id="materialContactFormEmail" class="form-control">
-                  <label for="materialContactFormEmail">E-mail</label>
-              </div>
-
-
-              <!--Message-->
-              <div class="md-form">
-                  <textarea id="materialContactFormMessage" name="mensaje" class="form-control md-textarea" style="resize: none;" rows="3"></textarea>
-                  <label for="materialContactFormMessage">Mensaje</label>
-              </div>
-              <!-- Send button -->
-              <input class="btn  btn-rounded btn-block z-depth-0 my-4 waves-effect bg-orange2" name="boton_enviar" type="submit">
-              
-            </form>
-          </div>
-        </div>
-      </div>
-</div>
-
-<!-- Footer -->
-<footer class="page-footer font-small pt-4 mt-4">
-
-<!-- Footer Links -->
-<div class="container text-center text-md-left">
-
-
-<!-- Copyright -->
-<div class=" container text-center py-3">
-
-</div>
-</footer>
-<br>
-
-<br><br>
-<!-- Footer -->
-<!--Jquery-->
-<script src="./js/jquery-3.5.1.min.js"></script>
-        <!--Popper.js-->
-        <script src=".js/popper.min.js"></script>
-        <!--Bootstrap JS-->
-        <script src="./js/bootstrap.min.js"></script>
-        
-    </body>
-
-
+            <div class="container-sm" >
+                <div class="row mb-3 " >
+                    <div class="col" >
+                        <p>Somos una pyme dedicada la fascinacion de nuestros clientes! en este sitio web pordrás encontrar
+                        todo lo relacionado con los productos que tenemos!.</p><br><br>
+                        <p>La tiendita de ceci se compromete con la satisfaccion de toda nuestra clientela.</p>
+                        <center><p class="titulo">¡¡Ven a visitarnos!!</p></center>
+                    </div>
+                </div>
+            </div>
+            
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Open+Sans" rel="stylesheet"> 
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-
+	<link rel="stylesheet" href="estilos.css">
+	<title>Ventana Emergente Animada</title>
 
     <style>
         
@@ -394,7 +282,7 @@
 			</div>
 		</div>
 	</div>
-   
+  
 
 	<script>
         var btnAbrirPopup = document.getElementById('btn-abrir-popup'),

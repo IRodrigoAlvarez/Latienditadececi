@@ -27,6 +27,11 @@
                 font-size: 40px;
                 font-family: 'Delius', cursive;
             }
+            
+            p.productos{
+                font-size: 23px;
+                font-family: 'Delius', cursive;
+            }
 
             p.categorias{
                 font-size: 70px;
@@ -100,6 +105,12 @@
                 font-weight: 1000;
 
             }
+            
+            button.ab{
+                font-size: 10px;
+
+            }
+            
             button.abajo{
                 font-family: 'Dancing Script', cursive;
                 font-size: 15px;
@@ -109,6 +120,7 @@
                 border: none !important;
     
             }
+            
             #instagram{
                 position: relative;
               
@@ -165,6 +177,13 @@
             .imgRedond{
                 position: relative;
                 top: -30px; left: 0px;
+                width:400px;
+                height:400px;
+                border-radius:200px;
+            }
+
+            #imgRedon{
+            
                 width:400px;
                 height:400px;
                 border-radius:200px;

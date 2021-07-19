@@ -6,9 +6,13 @@
         <link rel="shortcut icon" href="img/favicon2.ico">
         <link rel="stylesheet" href="css/estilos.css">
         <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Open+Sans" rel="stylesheet"> 
+	    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
         <!--Posibles fondos de pantalla
         1° background-image: url("https://fondosmil.com/fondo/16187.jpg");
         2° background-image: url("https://fondosmil.com/fondo/18743.jpg");
@@ -53,14 +57,143 @@
                 filter: blur(3px);  
             }
         </style>
+        <style>
+            .overlay {
+            background: rgba(0,0,0,.3);
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+                visibility: hidden;
+            }
+
+            .overlay.active {
+                visibility: visible;
+            }
+
+            .popup {
+                background: #F8F8F8;
+                box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+                border-radius: 3px;
+                font-family: 'Montserrat', sans-serif;
+                padding: 20px;
+                text-align: center;
+                width: 600px;
+                
+                transition: .3s ease all;
+                transform: scale(0.7);
+                opacity: 0;
+            }
+
+            .popup .btn-cerrar-popup {
+                font-size: 16px;
+                line-height: 16px;
+                display: block;
+                text-align: right;
+                transition: .3s ease all;
+                color: #BBBBBB;
+            }
+
+            .popup .btn-cerrar-popup:hover {
+                color: #000;
+            }
+
+            .popup h3 {
+                font-size: 36px;
+                font-weight: 600;
+                margin-bottom: 10px;
+                opacity: 0;
+            }
+
+            .popup h4 {
+                font-size: 26px;
+                font-weight: 300;
+                margin-bottom: 40px;
+                opacity: 0;
+            }
+
+            .popup form .contenedor-inputs {
+                opacity: 0;
+            }
+
+            .popup form .contenedor-inputs input {
+                width: 100%;
+                margin-bottom: 20px;
+                height: 52px;
+                font-size: 18px;
+                line-height: 52px;
+                text-align: center;
+                border: 1px solid #BBBBBB;
+            }
+
+            .popup form .btn-submit {
+                padding: 0 20px;
+                height: 40px;
+                line-height: 40px;
+                border: none;
+                color: #fff;
+                background: #5E7DE3;
+                border-radius: 3px;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 16px;
+                cursor: pointer;
+                transition: .3s ease all;
+            }
+
+            .popup form .btn-submit:hover {
+                background: rgba(94,125,227, .9);
+            }
+
+            /* ------------------------- */
+            /* ANIMACIONES */
+            /* ------------------------- */
+            .popup.active {	transform: scale(1); opacity: 1; }
+            .popup.active h3 { animation: entradaTitulo .8s ease .5s forwards; }
+            .popup.active h4 { animation: entradaSubtitulo .8s ease .5s forwards; }
+            .popup.active .contenedor-inputs { animation: entradaInputs 1s linear 1s forwards; }
+
+            @keyframes entradaTitulo {
+                from {
+                    opacity: 0;
+                    transform: translateY(-25px);
+                }
+
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+
+            @keyframes entradaSubtitulo {
+                from {
+                    opacity: 0;
+                    transform: translateY(25px);
+                }
+
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+
+            @keyframes entradaInputs {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+        </style>
 
         <?php
+            
 
             if (isset($_POST["boton_adm"]))
             {
                 $id = $_POST["ID"];
                 $pass = $_POST["pass"];
-                if($id =="adminxd2")
+                if($id =="admin")
                 {
                     if ($pass == "hola12345")
                     {
@@ -106,7 +239,7 @@
                 </div>
             </div>
         </nav>
-        <a href="login.php" ><img src="img/sesion.png" style="width:50px;
+        <a href="login.php"  ><img src="img/sesion.png" style="width:50px;
                 height:50px;
                 border-radius:100px;
                 position: absolute;
@@ -155,9 +288,11 @@
                     <center><p class="categorias">Categorías de nuestros productos</p></center>
                     
 
-                    <div class="container-fluid" style="border: red 5px solid; max-width:1800px; margin-top:40px;">
+                    <div class="container-fluid" style="max-width:1800px; margin-top:40px;">
+                    <hr>
                         <div class="row">
                             <?php
+                            /*
                                 include "conexion.php";
                                 $sql="SELECT * FROM categoria";
                                 $result=mysqli_query($conexion,$sql);
@@ -173,30 +308,42 @@
                                     
                                     ';
                                 }
+                                */
                             ?>
-                            <div class="co col-md-4" style="border: red 1px solid; ">
+                            
+                            <div class="co col-md-4" >
+                            <center><p class="tredes" >Muebles</p><br>
+                            <a href="Productos.php"><img src="img/SiS-deco.png" class="imgRedond" ></a>
+                            </div>
 
-                            <center><p class="tredes" >Muebles</p><br><a href=""><img src="img/SiS-deco.png" class="imgRedond" ></a>
+                            <div class="col col-md-4">
+                            <center><p class="tredes">Ropa</p><br>
+                            <a href="Productos.php"><img src="img/ropa.png" class="imgRedond"></a>
                             </div>
-                            <div class="col col-md-4"style="border: red 1px solid; ">
+
+                            <div class="col col-md-4">
+                            <center><p class="tredes">Plantas</p><br>
                             
-                            <center><p class="tredes">Ropa</p><br><img src="img/ropa.png" class="imgRedond">
+                            <a href="Productos.php"><img src="img/plan.png" class="imgRedond"></a>
                             </div>
-                            <div class="col col-md-4"style="border: red 1px solid;">
+
+                            <div class="col col-md-4">
+                            <center><p class="tredes">Accesorios</p><br>
                             
-                            <center><p class="tredes">Plantas</p><br><img src="img/plan.png" class="imgRedond">
+                            <a href="Productos.php"><img src="img/acc.png" class="imgRedond"></a>
+                            
                             </div>
-                            <div class="col col-md-4"style="border: red 1px solid;">
-                            <center><p class="tredes">Accesorios</p><br><img src="img/acc.png" class="imgRedond">
-                            </div>
+                                
+
                         </div>
+                        <hr>
                     </div>
 
 
                     
                         <br><br><br><br>
                     <center><p class="redes">¡Revisa nuestras publicaciones de Instagram más recientes! Y si deseas, dale like y siguenos!</p></center>
-                    <div class="container" style="border: red 5px solid;">
+                    <div class="container" >
                     
                   
                         <div class="row">
@@ -260,7 +407,31 @@
                     
                     }
                     ?>        
-                
+                	<div class="contenedor">
+		<article>
+			<button id="btn-abrir-popup" class="btn-abrir-popup" ><img src="img/sesion.png" style="width:50px;
+                height:50px;
+                border-radius:100px;
+                position: absolute;
+                top: 70px; left: 1800px;"></button>
+		
+		</article>
+
+		<div class="overlay" id="overlay">
+			<div class="popup" id="popup">
+				<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+			
+				<form action="index.php" method="POST">
+					<div class="contenedor-inputs">
+                        <h3>Inicia Sesion como administrador</h3>
+						<input type="text" name="ID" placeholder="Nombre">
+						<input type="password" name="pass" placeholder="Password">
+					</div>
+					<input type="submit" name="boton_adm" class="btn-submit" value="Ingresar como administrador">
+				</form>
+			</div>
+		</div>
+	</div>
                                 </div>
                                 
                             </div>
@@ -268,11 +439,165 @@
                         </div>
                             
                         
-                    </div>
-                </div>
-    </div>
-</div>
-</body>
+               
 
- </html>
+
+
+
+
+	
+
+    <style>
+        
+
+
+        .overlay {
+            background: rgba(0,0,0,.3);
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            visibility: hidden;
+        }
+
+        .overlay.active {
+            visibility: visible;
+        }
+
+        .popup {
+            background: #F8F8F8;
+            box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+            border-radius: 3px;
+            font-family: 'Montserrat', sans-serif;
+            padding: 20px;
+            text-align: center;
+            width: 600px;
+            
+            transition: .3s ease all;
+            transform: scale(0.7);
+            opacity: 0;
+        }
+
+        .popup .btn-cerrar-popup {
+            font-size: 16px;
+            line-height: 16px;
+            display: block;
+            text-align: right;
+            transition: .3s ease all;
+            color: #BBBBBB;
+        }
+
+        .popup .btn-cerrar-popup:hover {
+            color: #000;
+        }
+
+        .popup h3 {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            opacity: 0;
+        }
+
+        .popup h4 {
+            font-size: 26px;
+            font-weight: 300;
+            margin-bottom: 40px;
+            opacity: 0;
+        }
+
+        .popup form .contenedor-inputs {
+            opacity: 0;
+        }
+
+        .popup form .contenedor-inputs input {
+            width: 100%;
+            margin-bottom: 20px;
+            height: 52px;
+            font-size: 18px;
+            line-height: 52px;
+            text-align: center;
+            border: 1px solid #BBBBBB;
+        }
+
+        .popup form .btn-submit {
+            padding: 0 20px;
+            height: 40px;
+            line-height: 40px;
+            border: none;
+            color: #fff;
+            background: #5E7DE3;
+            border-radius: 3px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+            transition: .3s ease all;
+        }
+
+        .popup form .btn-submit:hover {
+            background: rgba(94,125,227, .9);
+        }
+
+        /* ------------------------- */
+        /* ANIMACIONES */
+        /* ------------------------- */
+        .popup.active {	transform: scale(1); opacity: 1; }
+        .popup.active h3 { animation: entradaTitulo .8s ease .5s forwards; }
+        .popup.active h4 { animation: entradaSubtitulo .8s ease .5s forwards; }
+        .popup.active .contenedor-inputs { animation: entradaInputs 1s linear 1s forwards; }
+
+        @keyframes entradaTitulo {
+            from {
+                opacity: 0;
+                transform: translateY(-25px);
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes entradaSubtitulo {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes entradaInputs {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+    </style>
+
+
+
+	<script>
+        var btnAbrirPopup = document.getElementById('btn-abrir-popup'),
+        overlay = document.getElementById('overlay'),
+        popup = document.getElementById('popup'),
+        btnCerrarPopup = document.getElementById('btn-cerrar-popup');
+
+        btnAbrirPopup.addEventListener('click', function(){
+        overlay.classList.add('active');
+        popup.classList.add('active');
+        });
+
+        btnCerrarPopup.addEventListener('click', function(e){
+        e.preventDefault();
+        overlay.classList.remove('active');
+        popup.classList.remove('active');
+        });
+    </script>
+
 
