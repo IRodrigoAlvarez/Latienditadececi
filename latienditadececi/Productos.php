@@ -128,7 +128,6 @@
                                     Complejo 5, El tabo. #expoverano puesto 21</p></center>
                 <div id="redes">   
                     <a id="instagram" href="https://www.instagram.com/latiendita_dececi/?hl=es-la" ><img src="img/ig.png"> </a><br><br>
-                    <a id="facebook" href="https://www.facebook.com/blancamarialingerie-103484251484852" ><img src="img/face.png"></a>
                 </div>
         <div class="container">
           
