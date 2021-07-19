@@ -38,7 +38,7 @@
         <form action="panel.php?pagina=reg_prod" method="POST">
         
         <label>Nombre Producto:</label>
-        <input type="text" name="nombreprod" placeholder="Ingrese nombre producto"><br>
+        <input type="text" name="nombreprod" autocomplete="off" placeholder="Ingrese nombre producto"><br>
         <label>Categoria del producto: </label>
 
         <select name="categoria">
@@ -55,7 +55,7 @@
                     ?>
                 </select><br>
         <label>Talla o tamaño:</label>
-        <input type="text" name="tallaprod" placeholder=" "><br>
+        <input type="text" name="tallaprod" autocomplete="off" placeholder=" "><br>
 
         <label>Stock Disponible:</label>
         <input type="number" name="stockprod"><br>

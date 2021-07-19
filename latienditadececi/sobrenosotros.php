@@ -274,7 +274,7 @@
 				<form action="index.php" method="POST">
 					<div class="contenedor-inputs">
                         <h3>Inicia Sesion como administrador</h3>
-						<input type="text" name="ID" placeholder="Nombre">
+						<input type="text" name="ID" placeholder="Nombre" autocomplete="off">
 						<input type="password" name="pass" placeholder="Password">
 					</div>
 					<input type="submit" name="boton_adm" class="btn-submit" value="Ingresar como administrador">

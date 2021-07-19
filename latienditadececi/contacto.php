@@ -173,27 +173,27 @@
 
               <!-- Name -->
               <div class="md-form mt-3">
-                  <input type="text" name="nombre_per" id="materialContactFormName" class="form-control">
+                  <input type="text" name="nombre_per" id="materialContactFormName" autocomplete="off" class="form-control">
                   <label for="materialContactFormName">Nombre</label>
               </div>
               <div class="md-form mt-3">
-                  <input type="text"name="asunto" id="materialContactFormName" class="form-control">
+                  <input type="text"name="asunto" id="materialContactFormName" autocomplete="off" class="form-control">
                   <label for="materialContactFormName">Asunto </label>
               </div>
               <div class="md-form mt-3">
-                  <input type="text" name="celular"id="materialContactFormName" class="form-control">
+                  <input type="text" name="celular"id="materialContactFormName" autocomplete="off" class="form-control">
                   <label for="materialContactFormName">Celular </label>
               </div>
               <!-- E-mail -->
               <div class="md-form">
-                  <input type="email" name="correo" id="materialContactFormEmail" class="form-control">
+                  <input type="email" name="correo" id="materialContactFormEmail" autocomplete="off" class="form-control">
                   <label for="materialContactFormEmail">E-mail</label>
               </div>
 
 
               <!--Message-->
               <div class="md-form">
-                  <textarea id="materialContactFormMessage" name="mensaje" class="form-control md-textarea" style="resize: none;" rows="3"></textarea>
+                  <textarea id="materialContactFormMessage" name="mensaje" autocomplete="off" class="form-control md-textarea" style="resize: none;" rows="3"></textarea>
                   <label for="materialContactFormMessage">Mensaje</label>
               </div>
               <!-- Send button -->
@@ -386,7 +386,7 @@
 				<form action="index.php" method="POST">
 					<div class="contenedor-inputs">
                         <h3>Inicia Sesion como administrador</h3>
-						<input type="text" name="ID" placeholder="Nombre">
+						<input type="text" name="ID" placeholder="Nombre" autocomplete="off">
 						<input type="password" name="pass" placeholder="Password">
 					</div>
 					<input type="submit" name="boton_adm" class="btn-submit" value="Ingresar como administrador">

@@ -29,7 +29,7 @@
         <form action="panel.php?pagina=add_catg" method="POST">
         
             <label>Nombre Categoria:</label>
-            <input type="text" name="nombrecate" placeholder="Ingrese nombre"><br>
+            <input type="text" name="nombrecate" placeholder="Ingrese nombre" autocomplete="off"><br>
             <label>Imagen Categoria:</label>
             <input name="archivo" type="file"/><br><br>
             <input type="submit" name="boton_addc" value="Agregar">
