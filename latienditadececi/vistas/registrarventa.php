@@ -227,12 +227,19 @@
                 echo "<b>PRECIO TOTAL: $".$precio.'</b>';
                 
                 ?>
-
+                <br>
+                <label>Si desea ingresar el NOMBRE de un NUEVO cliente, puede hacerlo aquí.</label><br>
+                <label>Debe ingresar el nombre del cliente con el siguiente formato:</label><br>
+                <label>Nombre, Apellido Paterno, Apellido Materno</label><br>
+                <form action="panel.php?pagina=registrarventa" method="POST">
+                    <input type="text" name="nuevo_cliente" placeholder="Nuevo cliente...">
+                    <input type="submit" name="boton_nc" value="Agregar">
+                </form>
             
                 <form action="panel.php?pagina=registrarventa" method="POST">
                     <br>
+                    <br>
                     <label>Seleccionar nombre de cliente registrado </label><br>
-                    
                     <select name="nombre_cliente" >
                         <?php
                             $sql="SELECT * FROM cliente";
@@ -243,17 +250,6 @@
                             }
                         ?>
                     </select>
-                    <br>
-
-                    <br>
-                <label>Si desea ingresar el NOMBRE de un NUEVO cliente, puede hacerlo aquí.</label><br>
-                <label>Debe ingresar el nombre del cliente con el siguiente formato:</label><br>
-                <label>Nombre, Apellido Paterno, Apellido Materno</label><br>
-                <form action="panel.php?pagina=registrarventa" method="POST">
-                    <input type="text" name="nuevo_cliente" placeholder="Nuevo cliente...">
-                    <input type="submit" name="boton_nc" value="Agregar">
-                </form>
-                        
                     <br>
                     <br>
                     <label>Si desea escribir algún detalle en particular sobre la venta, puede hacerlo aquí </label><br>
