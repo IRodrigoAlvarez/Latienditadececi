@@ -2,7 +2,7 @@
 <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width initial-scale=1.0">
-        <link rel="shortcut icon" href="img/favicon.ico">
+        <link rel="shortcut icon" href="img/favicon2.ico">
         <title> La tiendita de Ceci</title>
         <link rel="stylesheet" href="css/estilos.css">
         <link rel="stylesheet" href="./css/bootstrap.min.css">
