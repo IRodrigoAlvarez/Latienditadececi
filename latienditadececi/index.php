@@ -292,7 +292,7 @@
                     <hr>
                         <div class="row">
                             <?php
-                            /*
+                            
                                 include "conexion.php";
                                 $sql="SELECT * FROM categoria";
                                 $result=mysqli_query($conexion,$sql);
@@ -300,39 +300,18 @@
                                 {
                                     echo '
                                     
-                                    <div class="co col-md-4" style="border: red 1px solid; ">
-                                    <center><p class="tredes" >'.$mostrar['nombre_categoria'].'</p><br><a href=""><img src="img/'.$mostrar['imagen_categoria'].'" class="imgRedond" ></a>
+                                    <div class="co col-md-4" ">
+                                    <center><p class="tredes" >'.$mostrar['nombre_categoria'].'</p><br><a href="Productos.php"><img src="img/'.$mostrar['imagen_categoria'].'" class="imgRedond" ></a>
                                     </div>
                                     
                                     
                                     
                                     ';
                                 }
-                                */
+                                
                             ?>
                             
-                            <div class="co col-md-4" >
-                            <center><p class="tredes" >Muebles</p><br>
-                            <a href="Productos.php"><img src="img/SiS-deco.png" class="imgRedond" ></a>
-                            </div>
-
-                            <div class="col col-md-4">
-                            <center><p class="tredes">Ropa</p><br>
-                            <a href="Productos.php"><img src="img/ropa.png" class="imgRedond"></a>
-                            </div>
-
-                            <div class="col col-md-4">
-                            <center><p class="tredes">Plantas</p><br>
-                            
-                            <a href="Productos.php"><img src="img/plan.png" class="imgRedond"></a>
-                            </div>
-
-                            <div class="col col-md-4">
-                            <center><p class="tredes">Accesorios</p><br>
-                            
-                            <a href="Productos.php"><img src="img/acc.png" class="imgRedond"></a>
-                            
-                            </div>
+                        
                                 
 
                         </div>
